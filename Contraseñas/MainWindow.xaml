@@ -1,0 +1,65 @@
+﻿<Window x:Class="Contraseñas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contraseñas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Border CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="189*"/>
+                <ColumnDefinition Width="189*"/>
+                <ColumnDefinition Width="378*"/>
+                <ColumnDefinition Width="28*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="243*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="/markus-spiske-gcgves5H_Ac-unsplash.jpg" Opacity="0.8"/>
+            </Grid.Background>
+            <Label Content="PasswordGenerator" Foreground="White" FontFamily="Consolas" FontSize="36" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TabControl Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="5">
+                <TabItem Header="INFO" Width="180" HorizontalAlignment="Left" FontFamily="Consolas">
+                    <Grid Height="337" Width="796">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Label Content=" Esta aplicación genera contraseñas seguras y verifica que las que tienes lo son" Foreground="Black" FontFamily="Consolas" HorizontalAlignment="Left" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Generar contraseña" Width="180" FontFamily="Consolas">
+                    <Grid Height="336" Width="796">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+
+                        <Border CornerRadius="15" BorderBrush="#dde5b6" BorderThickness="2" Background="#dde5b6" Margin="48">
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock FontSize="12" FontWeight="Bold" FontFamily="Consolas" Foreground="#333333" Text="Tener una contraseña segura es crucial para proteger nuestra información personal y empresarial, prevenir el robo de identidad y cumplir con las normativas de privacidad y seguridad." TextWrapping="Wrap" Margin="25"/>
+                                <Button Content="Generar contraseña" Width="180" Height="40" FontSize="16" FontWeight="Bold" Background="#31572c" Foreground="White" Margin="25" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            </StackPanel>
+                        </Border>
+
+
+                        <Border Grid.Column="1"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Comprobar contraseña" Width="180" FontFamily="Consolas">
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Border>
+</Window>
