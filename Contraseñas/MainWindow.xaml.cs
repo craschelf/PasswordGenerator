@@ -112,6 +112,23 @@ namespace Contraseñas
             return false;
         }
 
+        /*Método para comprobar si la contraseña tiene algún número*/
+        private bool TieneNumero(string password)
+        {
+            for (int i = 0; i < password.Length; i++)
+            {
+                char character = password[i];
+
+                if (char.IsDigit(character))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    
+
         /* Método para comprobar si la contraseña tiene alguno de los carácteres especiales definidos */
         private bool TieneCaracterEspecial(string password)
         {
@@ -125,6 +142,48 @@ namespace Contraseñas
             }
             return false;
         }
-    }
+
+        private void ComprobarPasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+            ComprobarPassword();
+        }
+
+        /*Método para comprobar si la password es correcta*/
+        private void ComprobarPassword()
+        {
+            String password = ComprobarPasswordTextBlock.Text;
+
+            StringBuilder avisoBuilder = new StringBuilder();
+
+            if (!Tiene8oMasCaracteres(password))
+            {
+                avisoBuilder.Append("\tNo contiene al menos 8 caracteres.\n");
+
+            } if (!TieneMinusculaYMayuscula(password))
+            {
+                avisoBuilder.Append("\tTiene que tener al menos una minúscula y una mayúscula.\n");
+            } if(!TieneNumero(password)){
+
+                avisoBuilder.Append("\tTiene que tener al menos un número.\n");
+
+            }if(!TieneCaracterEspecial(password))
+            {
+                avisoBuilder.Append("\tTiene que tener al menos un carácter especial: [.;@]");
+            }
+
+            if(Tiene8oMasCaracteres(password) && TieneMinusculaYMayuscula(password) && TieneNumero(password) && TieneCaracterEspecial(password))
+            {
+                MessageBox.Show("Felicidades!!! Tu contraseña cumple todos los requisitos.");
+            }
+            else
+            {
+                MessageBox.Show("No se cumplen los siguientes requisitos: \n" + avisoBuilder.ToString());
+            }
+            
+        } 
+    } 
 }
+    
+
+    
     
