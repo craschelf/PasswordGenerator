@@ -10,10 +10,16 @@
 
   <ItemGroup>
     <None Remove="markus-spiske-gcgves5H_Ac-unsplash.jpg" />
+    <None Remove="password-protection-privacy-access-verification-code-svgrepo-com.png" />
+    <None Remove="undraw_Forgot_password_re_hxwm.png" />
+    <None Remove="undraw_secure_login_pdn4.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="markus-spiske-gcgves5H_Ac-unsplash.jpg" />
+    <Resource Include="password-protection-privacy-access-verification-code-svgrepo-com.png" />
+    <Resource Include="undraw_Forgot_password_re_hxwm.png" />
+    <Resource Include="undraw_secure_login_pdn4.png" />
   </ItemGroup>
 
 </Project>

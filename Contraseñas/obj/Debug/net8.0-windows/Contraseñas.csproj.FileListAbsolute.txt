@@ -18,3 +18,4 @@ C:\Users\raquel\source\repos\Contraseñas\Contraseñas\obj\Debug\net8.0-windows\
 C:\Users\raquel\source\repos\Contraseñas\Contraseñas\obj\Debug\net8.0-windows\Contraseñas.pdb
 C:\Users\raquel\source\repos\Contraseñas\Contraseñas\obj\Debug\net8.0-windows\Contraseñas.genruntimeconfig.cache
 C:\Users\raquel\source\repos\Contraseñas\Contraseñas\obj\Debug\net8.0-windows\ref\Contraseñas.dll
+C:\Users\raquel\source\repos\Contraseñas\Contraseñas\obj\Debug\net8.0-windows\Contraseñas.sourcelink.json

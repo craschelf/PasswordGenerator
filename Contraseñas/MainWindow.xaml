@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contraseñas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="800">
     <Border CornerRadius="10">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
             </Grid.Background>
             <Label Content="PasswordGenerator" Foreground="White" FontFamily="Consolas" FontSize="36" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
             <TabControl Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="5">
-                <TabItem Header="INFO" Width="180" HorizontalAlignment="Left" FontFamily="Consolas">
+                <TabItem Header="INFO" Width="180" HorizontalAlignment="Left" FontFamily="Consolas" FontWeight="Bold" Height="30" FontSize="14">
                     <Grid Height="337" Width="796">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -34,10 +34,10 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                         </Grid.RowDefinitions>
-                        <Label Content=" Esta aplicación genera contraseñas seguras y verifica que las que tienes lo son" Foreground="Black" FontFamily="Consolas" HorizontalAlignment="Left" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Label Content=" Esta aplicación genera contraseñas seguras y verifica que las que tienes lo son" Foreground="Black" FontFamily="Consolas" HorizontalAlignment="Left" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="12"/>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Generar contraseña" Width="180" FontFamily="Consolas">
+                <TabItem Header="Generar contraseña" FontWeight="Bold" FontSize="14" Width="180" FontFamily="Consolas">
                     <Grid Height="336" Width="796">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -45,19 +45,49 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                         </Grid.RowDefinitions>
-
-                        <Border CornerRadius="15" BorderBrush="#dde5b6" BorderThickness="2" Background="#dde5b6" Margin="48">
+                        <Border CornerRadius="15" BorderBrush="#3E9D71" BorderThickness="2" Background="#343a40" Margin="15,15,15,0">
                             <StackPanel VerticalAlignment="Center">
-                                <TextBlock FontSize="12" FontWeight="Bold" FontFamily="Consolas" Foreground="#333333" Text="Tener una contraseña segura es crucial para proteger nuestra información personal y empresarial, prevenir el robo de identidad y cumplir con las normativas de privacidad y seguridad." TextWrapping="Wrap" Margin="25"/>
-                                <Button Content="Generar contraseña" Width="180" Height="40" FontSize="16" FontWeight="Bold" Background="#31572c" Foreground="White" Margin="25" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <TextBlock FontSize="12" FontWeight="Bold" FontFamily="Consolas" Foreground="White" Text="Tener una contraseña segura es crucial para proteger nuestra información personal y empresarial, prevenir el robo de identidad y cumplir con las normativas de privacidad y seguridad." TextWrapping="Wrap" Margin="25"/>
+                                <Button x:Name="GenerarPasswordButton" Content="Generar contraseña" Width="180" Height="40" FontSize="16" FontWeight="Bold" Background="#3E9D71" Foreground="White" Margin="25" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerarPasswordButton_Click"/>
                             </StackPanel>
                         </Border>
-
-
-                        <Border Grid.Column="1"/>
+                        <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="3" BorderBrush="#343a40" Background="#3E9D71" Height="55" Width="340" CornerRadius="15" Margin="0,27,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="30" Width="50" Source="/password-protection-privacy-access-verification-code-svgrepo-com.png"/>
+                                <TextBlock x:Name="PasswordTextBlock" Text="" Height="15" FontSize="13" Foreground="White" FontWeight="Bold" Width="270" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <Image Grid.Column="1" VerticalAlignment="Bottom" Width="350" HorizontalAlignment="Left" Opacity="0.9" Source="/undraw_secure_login_pdn4.png"></Image>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Comprobar contraseña" Width="180" FontFamily="Consolas">
+                <TabItem Header="Comprobar contraseña" Width="180" FontFamily="Consolas" FontWeight="Bold" FontSize="14">
+                    <Grid Height="336" Width="796">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="97*"/>
+                        </Grid.RowDefinitions>
+                        <Border CornerRadius="15" BorderBrush="#3E9D71" BorderThickness="2" Background="#343a40" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Margin="15,15,15,0">
+                        </Border>
+                        <Label Content="Introduzca su contraseña: " VerticalAlignment="Center" Margin="15,0,15,0" Height="25"/>
+                        <Image Height="30" Width="30" Source="/password-protection-privacy-access-verification-code-svgrepo-com.png" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0"/>
+                        <Border BorderBrush="#3E9D71" Grid.Row="1" BorderThickness="3" Height="34" Width="280" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" CornerRadius="10">
+                            <TextBox VerticalAlignment="Center" Width="250" BorderThickness="0"/>
+                        </Border>
+                        <Button x:Name="ComprobarPasswordButton" Content="Comprobar contraseña" Width="190" Height="35" FontSize="16" FontWeight="Bold" Background="#343a40" BorderThickness="1" BorderBrush="#3E9D71" Foreground="White" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="1" Margin="145,0,0,0"/>
+                        <Image Grid.Column="0" Grid.Row="2" Source="/undraw_Forgot_password_re_hxwm.png" VerticalAlignment="Bottom" Height="170" HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="30" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <TextBlock Text="Contiene al menos 8 caracteres." Margin="0,0,0,10"/>
+                            <TextBlock Text="Contiene al menos una letra mayúscula y una minúscula." TextWrapping="Wrap" Margin="0,0,0,15"/>
+                            <TextBlock Text="Al menos uno de los caracteres debe ser un número." TextWrapping="Wrap" Margin="0,0,0,15"/>
+                            <TextBlock Text="Debe contener un signo de puntuación de los siguientes: punto, punto y coma, o arroba." TextWrapping="Wrap" Margin="0,0,0,15"/>
+                        </StackPanel>
+                    </Grid>
+                    
                 </TabItem>
             </TabControl>
         </Grid>
