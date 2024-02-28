@@ -161,26 +161,35 @@ namespace Contraseñas
 
             } if (!TieneMinusculaYMayuscula(password))
             {
-                avisoBuilder.Append("\tTiene que tener al menos una minúscula y una mayúscula.\n");
+                avisoBuilder.Append("\tDebe contener una minúscula y una mayúscula.\n");
             } if(!TieneNumero(password)){
 
-                avisoBuilder.Append("\tTiene que tener al menos un número.\n");
+                avisoBuilder.Append("\tDebe contener un número.\n");
 
             }if(!TieneCaracterEspecial(password))
             {
-                avisoBuilder.Append("\tTiene que tener al menos un carácter especial: [.;@]");
+                avisoBuilder.Append("\tDebe contener un carácter especial: [.;@]");
             }
 
             if(Tiene8oMasCaracteres(password) && TieneMinusculaYMayuscula(password) && TieneNumero(password) && TieneCaracterEspecial(password))
             {
-                MessageBox.Show("Felicidades!!! Tu contraseña cumple todos los requisitos.");
+                MessageBox.Show("Su contraseña es 100% segura, cumple con todos los requisitos.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("No se cumplen los siguientes requisitos: \n" + avisoBuilder.ToString());
+                MessageBox.Show(this, "Su contraseña no es segura. No se cumplen los siguientes requisitos: \n" + avisoBuilder.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
-        } 
+        }
+
+        /*Método para poder copiar la contraseña al portapapeles al hacer click con el mouse*/
+        private void PasswordTextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is TextBlock textBlock)
+            {
+                Clipboard.SetText(textBlock.Text);
+            }
+        }
     } 
 }
     

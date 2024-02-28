@@ -40,10 +40,11 @@
                                 <Button x:Name="GenerarPasswordButton" Content="Generar contraseña" Width="180" Height="40" FontSize="16" FontWeight="Bold" Background="#3E9D71" Foreground="White" Margin="25" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerarPasswordButton_Click"/>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="3" BorderBrush="#343a40" Background="#3E9D71" Height="55" Width="340" CornerRadius="15" Margin="0,27,0,0">
+                        <Label Content="Haz click con el mouse para copiar la contraseña" FontSize="10" Grid.Column="1" Height="20" Width="300" HorizontalAlignment="Center" Foreground="Gray" Margin="0,0,0,252"/>
+                        <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="3" BorderBrush="#343a40" Background="#3E9D71" Height="38" Width="320" CornerRadius="15" Margin="0,50,0,0">
                             <StackPanel Orientation="Horizontal">
-                                <Image Height="30" Width="50" Source="/password-protection-privacy-access-verification-code-svgrepo-com.png"/>
-                                <TextBlock x:Name="PasswordTextBlock" Text="" Height="15" FontSize="13" Foreground="White" FontWeight="Bold" Width="270" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Image Height="25" Width="45" Source="/password-protection-privacy-access-verification-code-svgrepo-com.png"/>
+                                <TextBlock x:Name="PasswordTextBlock" Text="" Height="15" FontSize="12" Foreground="White" FontWeight="Bold" Width="260" VerticalAlignment="Center" HorizontalAlignment="Center" PreviewMouseDown="PasswordTextBlock_PreviewMouseDown"/>
                             </StackPanel>
                         </Border>
                         <Image Grid.Column="1" VerticalAlignment="Bottom" Width="350" HorizontalAlignment="Left" Opacity="0.9" Source="/undraw_secure_login_pdn4.png"></Image>
@@ -60,24 +61,22 @@
                             <RowDefinition Height="45*"/>
                             <RowDefinition Height="97*"/>
                         </Grid.RowDefinitions>
-                        <Border CornerRadius="15" BorderBrush="#3E9D71" BorderThickness="2" Background="#343a40" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Margin="15,15,35,0">
-                        </Border>
+                        <Border CornerRadius="15" BorderBrush="#3E9D71" BorderThickness="2" Background="#343a40" Grid.Column="1"  Grid.RowSpan="3" Margin="15,15,35,-25"/>
                         <Label Content="Introduzca su contraseña: " VerticalAlignment="Center" Margin="15,0,15,0" Height="25"/>
                         <Image Height="30" Width="30" Source="/password-protection-privacy-access-verification-code-svgrepo-com.png" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0"/>
                         <Border BorderBrush="#3E9D71" Grid.Row="1" BorderThickness="3" Height="34" Width="280" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" CornerRadius="10">
-                            <TextBox x:Name="ComprobarPasswordTextBlock"  VerticalAlignment="Center" Width="250" BorderThickness="0"/>
+                            <TextBox x:Name="ComprobarPasswordTextBlock"  VerticalAlignment="Center" Width="250" BorderThickness="0" FontSize="12"/>
                         </Border>
-                        <Button x:Name="ComprobarPasswordButton" Content="Comprobar contraseña" Width="190" Height="35" FontSize="16" FontWeight="Bold" Background="#343a40" BorderThickness="1" BorderBrush="#3E9D71" Foreground="White" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="1" Margin="145,0,0,0" Click="ComprobarPasswordButton_Click"/>
+                        <Button x:Name="ComprobarPasswordButton" Content="Comprobar contraseña" Width="190" Height="35" FontSize="16" FontWeight="Bold" Background="#3E9D71" BorderThickness="1" BorderBrush="#343a40" Foreground="White" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="1" Margin="145,0,0,0" Click="ComprobarPasswordButton_Click"/>
                         <Image Grid.Column="0" Grid.Row="2" Source="/undraw_Forgot_password_re_hxwm.png" VerticalAlignment="Bottom" Height="170" HorizontalAlignment="Left"/>
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="30" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <TextBlock Text="La contraseña debe cumplir con los siguientes requisitos" Foreground="White" FontSize="12"/>
-                            <TextBlock x:Name="CaracteresTextBlock" Text="Contiene al menos 8 caracteres." Margin="0,0,0,20" Foreground="White"/>
-                            <TextBlock x:Name="UpperLowerCaseTextBlock" Text="Contiene al menos una letra mayúscula y una minúscula." TextWrapping="Wrap" Margin="0,0,0,20" Foreground="White"/>
-                            <TextBlock x:Name="NumberTextBlock" Text="Al menos uno de los caracteres debe ser un número." TextWrapping="Wrap" Margin="0,0,0,20" Foreground="White"/>
-                            <TextBlock x:Name="SymbolTextBlock" Text="Debe contener un signo de puntuación de los siguientes: punto, punto y coma, o arroba." Foreground="White" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Margin="49,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="208" Width="280" Grid.Column="1">
+                            <TextBlock Text="Una contraseña segura debe cumplir con los siguientes requisitos:" Foreground="White" FontSize="12" TextWrapping="Wrap" Margin="0,0,0,30"/>
+                            <TextBlock x:Name="CaracteresTextBlock" Text="-Contener al menos 8 caracteres." Margin="0,0,0,15" Foreground="White" FontSize="12"/>
+                            <TextBlock x:Name="UpperLowerCaseTextBlock" Text="-Contener al menos una letra mayúscula y una minúscula." TextWrapping="Wrap" Margin="0,0,0,15" Foreground="White" FontSize="12"/>
+                            <TextBlock x:Name="NumberTextBlock" Text="-Al menos uno de los caracteres debe ser un número." TextWrapping="Wrap" Margin="0,0,0,15" Foreground="White" FontSize="12"/>
+                            <TextBlock x:Name="SymbolTextBlock" Text="-Contener un signo de puntuación de los siguientes: [.;@]" Foreground="White" TextWrapping="Wrap" Margin="0,0,0,15" FontSize="12"/>
                         </StackPanel>
                     </Grid>
-                    
                 </TabItem>
             </TabControl>
         </Grid>
